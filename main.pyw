@@ -84,6 +84,13 @@ try:
     root.state('zoomed')
 except:
     pass
+
+try:
+    root.overrideredirect(1)
+    root.state('zoomed')
+    
+except:
+    pass
 try:
     root.attributes('-zoomed', True) 
 except:
