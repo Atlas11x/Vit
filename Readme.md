@@ -1,2 +1,2 @@
 #Virus IT
-Need python3 on the machine
+*Need python3 on the machine
