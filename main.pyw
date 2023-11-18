@@ -81,30 +81,34 @@ root = tk.Tk()
 #setting title
 root.title(config.window_title)
 #setting window size
-width=800
-height=600
-screenwidth = root.winfo_screenwidth()
-screenheight = root.winfo_screenheight()
-alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
-root.geometry(alignstr)
+if not(config.run_in_fullscreen):
+    width=800
+    height=600
+    screenwidth = root.winfo_screenwidth()
+    screenheight = root.winfo_screenheight()
+    alignstr = '%dx%d+%d+%d' % (width, height, (screenwidth - width) / 2, (screenheight - height) / 2)
+    root.geometry(alignstr)
+
 root.resizable(width=False, height=False)
 root["bg"] = "black"
 root.protocol("WM_DELETE_WINDOW", Quit)
-try:
-    root.state('zoomed')
-except:
-    pass
 
-try:
-    root.overrideredirect(1)
-    root.state('zoomed')
-    
-except:
-    pass
-try:
-    root.attributes('-zoomed', True) 
-except:
-    pass
+if config.run_in_fullscreen:
+    if config.os == 'w':
+        try:
+            root.overrideredirect(1)
+            root.state('zoomed')
+
+        except:
+            pass
+
+    if config.os == 'l':
+        try:
+            root.attributes('-zoomed', True) 
+            root.attributes('-fullscreen', True)
+        except:
+            pass
+
 lbl_main=tk.Label(root)
 lbl_main["activeforeground"] = "#ffffff"
 lbl_main["anchor"] = "center"
