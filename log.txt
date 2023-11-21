@@ -1,0 +1,47 @@
+logs: ===============================================
+Run theard (task killer)
+logs: (Task-killer): emitation mode
+logs: <M.run_music>: Method was started
+logs: <M.run_music>: Music file was started;
+    End
+logs: Music run
+logs: <M.run_cmd>: Method was started
+logs: <M.run_cmd>: cmd 0 was created
+logs: <M.run_cmd>: cmd 1 was created
+logs: <M.run_cmd>: cmd 2 was created
+logs: <M.run_cmd>: End
+logs: 3 cmds was started
+logs: <M.run_password>: Method was started;
+    Button was pressed;
+    Request wassword...
+logs: <M.run_password>: inp_pass: 123321
+logs: <M.run_password>: Access granted; Start Explorer
+logs: <M.run_password>: End of programm;
+    Exit
+logs: ===============================================
+Run theard (task killer)
+logs: (Task-killer): emitation mode
+logs: <M.run_music>: Method was started
+logs: <M.run_music>: Music file was started;
+    End
+logs: Music run
+logs: <M.run_cmd>: Method was started
+logs: <M.run_cmd>: cmd 0 was created
+logs: <M.run_cmd>: cmd 1 was created
+logs: <M.run_cmd>: cmd 2 was created
+logs: <M.run_cmd>: End
+logs: 3 cmds was started
+logs: <M.run_password>: Method was started;
+    Button was pressed;
+    Request wassword...
+logs: <M.run_password>: inp_pass: 321123
+logs: <M.run_password>: Acces denide;
+    Shutdown
+logs: <M.run_password>: config.DEV_MODE_SET_SAFE: Emitation of shutdown
+logs: <M.run_password>: Method was started;
+    Button was pressed;
+    Request wassword...
+logs: <M.run_password>: inp_pass: 123321
+logs: <M.run_password>: Access granted; Start Explorer
+logs: <M.run_password>: End of programm;
+    Exit
