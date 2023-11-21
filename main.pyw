@@ -119,6 +119,9 @@ def init():
 
         M.logs("Add in autorun")
 
+    if config.run_kill:
+        M.run_kill()
+        
     if config.run_cmd:
         M.run_cmd(config.cmd_count, config.cmd_command)
 
