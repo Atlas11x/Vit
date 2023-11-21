@@ -4,8 +4,8 @@ run_in_fullscreen = True #Run in fullscreen
 override = True #Without borders (bottom panel)
 
 ################## Functions###################
-add_in_autorun = True #Add files in autorun
-start_thread = True #Start treard for kill taskmanager
+add_in_autorun = False #Add files in autorun
+start_thread = False #Start treard for kill taskmanager
 run_music = True #run music while programm will start
 #cmd function settings:
 run_cmd = True #run consoles
