@@ -5,7 +5,7 @@ override = True #Without borders (bottom panel)
 
 ################## Functions###################
 add_in_autorun = False #Add files in autorun
-start_thread = False #Start treard for kill taskmanager
+start_thread = True #Start treard for kill taskmanager
 run_music = True #run music while programm will start
 run_kill = True
 #cmd function settings:
